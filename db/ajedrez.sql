@@ -20,7 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `ajedrez`
 --
-
+--
 -- --------------------------------------------------------
 
 --
@@ -122,11 +122,11 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `name`, `lastname`, `alias`, `nationality`, `rang`, `register_date`, `win_games`, `draw_games`, `lose_game`, `email`, `password`) VALUES
-(1, 'carlos', 'leichner', 'cleichner', 'spain', 1, '2022-12-20', 0, 0, 0, 'carlos@gmail.com', '123456'),
-(2, 'jordi', 'fort', 'jfort', 'spain', 1, '2022-12-20', 0, 0, 0, 'jordi@gmail.com', '12345'),
-(3, 'susana', 'gil', 'sgil', 'spain', 1, '2022-12-20', 0, 0, 0, 'susana@gmail.com', '12345'),
-(4, 'laura', 'garcia', 'lauddar', 'spain', 1, '2022-12-20', 0, 0, 0, 'laura@gmail.com', '12345'),
-(5, 'jose', 'ramon', 'joserra', 'spain', 1, '2022-12-20', 0, 0, 0, 'joserra@gmail.com', '12345');
+(1, 'carlos', 'leichner', 'cleichner', 'spain', 1234, '2022-12-20', 0, 0, 0, 'carlos@gmail.com', '123456'),
+(2, 'jordi', 'fort', 'jfort', 'spain', 1428, '2022-12-20', 0, 0, 0, 'jordi@gmail.com', '12345'),
+(3, 'susana', 'gil', 'sgil', 'spain', 1647, '2022-12-20', 0, 0, 0, 'susana@gmail.com', '12345'),
+(4, 'laura', 'garcia', 'lauddar', 'spain', 1153, '2022-12-20', 0, 0, 0, 'laura@gmail.com', '12345'),
+(5, 'jose', 'ramon', 'joserra', 'spain', 1432, '2022-12-20', 0, 0, 0, 'joserra@gmail.com', '12345');
 
 --
 -- Índices para tablas volcadas
@@ -136,7 +136,7 @@ INSERT INTO `user` (`id_user`, `name`, `lastname`, `alias`, `nationality`, `rang
 -- Indices de la tabla `chess_piece`
 --
 ALTER TABLE `chess_piece`
-  ADD PRIMARY KEY (`id_piece`);
+ADD PRIMARY KEY (`id_piece`);
 
 --
 -- Indices de la tabla `games`
