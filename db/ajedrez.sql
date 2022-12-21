@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-12-2022 a las 10:31:34
+-- Tiempo de generación: 21-12-2022 a las 10:39:05
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 8.1.10
 
@@ -47,30 +47,30 @@ INSERT INTO `chess_piece` (`id_piece`, `name`, `initial_position1`, `initial_pos
 (6, 'white_pawn', 'f2', ''),
 (7, 'white_pawn', 'g2', ''),
 (8, 'white_pawn', 'h2', ''),
-(9, 'black_pawn', 'a7', ''),
-(10, 'black_pawn', 'b7', ''),
-(11, 'black_pawn', 'c7', ''),
-(12, 'black_pawn', 'd7', ''),
-(13, 'black_pawn', 'e7', ''),
-(14, 'black_pawn', 'f7', ''),
-(15, 'black_pawn', 'g7', ''),
-(16, 'black_pawn', 'h7', ''),
+(9, 'black_pawn', '', 'a7'),
+(10, 'black_pawn', '', 'b7'),
+(11, 'black_pawn', '', 'c7'),
+(12, 'black_pawn', '', 'd7'),
+(13, 'black_pawn', '', 'e7'),
+(14, 'black_pawn', '', 'f7'),
+(15, 'black_pawn', '', 'g7'),
+(16, 'black_pawn', '', 'h7'),
 (17, 'white_rook', 'a1', ''),
 (18, 'white_rook', 'h1', ''),
-(19, 'black_rook', 'a8', ''),
-(20, 'black_rook', 'h8', ''),
+(19, 'black_rook', '', 'a8'),
+(20, 'black_rook', '', 'h8'),
 (21, 'white_knight', 'b1', ''),
 (22, 'white_knight', 'g1', ''),
-(23, 'black_knight', 'b8', ''),
-(24, 'black_knight', 'g8', ''),
+(23, 'black_knight', '', 'b8'),
+(24, 'black_knight', '', 'g8'),
 (25, 'white_bishop', 'c1', ''),
 (26, 'white_bishop', 'f1', ''),
-(27, 'black_bishop', 'c8', ''),
-(28, 'black_bishop', 'f8', ''),
+(27, 'black_bishop', '', 'c8'),
+(28, 'black_bishop', '', 'f8'),
 (29, 'white_queen', 'd1', ''),
-(30, 'black_queen', 'd8', ''),
+(30, 'black_queen', '', 'd8'),
 (31, 'white_king', 'e1', ''),
-(32, 'black_king', 'e8', '');
+(32, 'black_king', '', 'e8');
 
 -- --------------------------------------------------------
 
@@ -106,7 +106,7 @@ CREATE TABLE `user` (
   `id_user` int(11) NOT NULL,
   `name` varchar(250) NOT NULL,
   `lastname` varchar(250) NOT NULL,
-  `Username` varchar(255) NOT NULL,
+  `alias` varchar(255) NOT NULL,
   `nationality` varchar(250) NOT NULL,
   `rang` bigint(20) NOT NULL,
   `register_date` date NOT NULL,
@@ -121,7 +121,7 @@ CREATE TABLE `user` (
 -- Volcado de datos para la tabla `user`
 --
 
-INSERT INTO `user` (`id_user`, `name`, `lastname`, `Username`, `nationality`, `rang`, `register_date`, `win_games`, `draw_games`, `lose_game`, `email`, `password`) VALUES
+INSERT INTO `user` (`id_user`, `name`, `lastname`, `alias`, `nationality`, `rang`, `register_date`, `win_games`, `draw_games`, `lose_game`, `email`, `password`) VALUES
 (1, 'carlos', 'leichner', 'cleichner', 'spain', 1, '2022-12-20', 0, 0, 0, 'carlos@gmail.com', '123456'),
 (2, 'jordi', 'fort', 'jfort', 'spain', 1, '2022-12-20', 0, 0, 0, 'jordi@gmail.com', '12345'),
 (3, 'susana', 'gil', 'sgil', 'spain', 1, '2022-12-20', 0, 0, 0, 'susana@gmail.com', '12345'),
