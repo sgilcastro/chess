@@ -10,12 +10,11 @@ function loadContent($id_page) {
     if((!isset($id_page)) || $id_page=="") {
         $id_page="";
     }
-    
     switch ($id_page) {
         case "":
             include 'inc/login.php';
             break;
-        case "":
+        case "create":
             include 'inc/create.php';
             break;
         case "rank":
