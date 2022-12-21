@@ -17,7 +17,10 @@ function loadContent($id_page) {
             break;
         case "":
             include 'inc/create.php';
-            break;       
+            break;
+        case "rank":
+            include 'inc/rank.php';
+            break;     
         default:
             include 'inc/error404.php';
             break;
