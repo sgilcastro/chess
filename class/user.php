@@ -1,5 +1,5 @@
 <?php
-
+include ('db/config.php');
 
 class User{
 
