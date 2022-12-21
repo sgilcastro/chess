@@ -14,7 +14,10 @@ function loadContent($id_page) {
     switch ($id_page) {
         case "":
             include 'inc/login.php';
-            break;      
+            break;
+        case "":
+            include 'inc/create.php';
+            break;       
         default:
             include 'inc/error404.php';
             break;
