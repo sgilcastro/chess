@@ -21,9 +21,9 @@ function loadContent($id_page) {
         case "listgames":
             include 'inc/listgames.php';
             break;
-        case "index":
-            include 'inc/index.php';
-            break;            
+        // case "index":
+        //     include 'inc/index.php';
+        //     break;            
         case "profile":
             include 'inc/profile.php';
             break;
