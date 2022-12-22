@@ -30,8 +30,8 @@ function loadContent($id_page) {
         case "play":
             include 'inc/play.php';
             break;
-        case "viewrank":
-            include 'inc/viewrank.php';
+        case "rank":
+            include 'inc/rank.php';
             break;
         case "edit":
             include 'inc/edit.php';
