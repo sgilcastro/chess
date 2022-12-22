@@ -16,7 +16,6 @@ function loadContent($id_page) {
             break;
         case "create":
             include 'inc/create.php';
-
             break; 
         case "listgames":
             include 'inc/listgames.php';
@@ -24,8 +23,8 @@ function loadContent($id_page) {
         case "profile":
             include 'inc/profile.php';
             break;
-        case "play":
-            include 'inc/play.php';
+        case "game":
+            include 'inc/game.php';
             break;
         case "rank":
             include 'inc/rank.php';
