@@ -64,6 +64,7 @@ function getPunctuationFromRank($rank)
 </head>
 
 <body>
+<?php include "header-tailwind.php" ?>
     <section>
         <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto ">
             <h1
@@ -132,5 +133,5 @@ function getPunctuationFromRank($rank)
         </div>
     </section>
 </body>
-
+<?php include "footer-tailwind.php" ?>
 </html>

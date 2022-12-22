@@ -55,6 +55,13 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
+<header>
+    <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
+        <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+            <div style="font-family: sans serif; font-size:40px;"><h1><strong style=" padding-left:500px">CHESS.ES</strong></h1></div>
+        </div>
+    </nav>
+</header>
 <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
   <h1>Create User</h1>
 
@@ -237,4 +244,5 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
 </div>
 
 </body>
+<?php include "footer-tailwind.php" ?>
 </html>

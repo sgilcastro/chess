@@ -7,13 +7,13 @@ session_start();
  $sql = "SELECT * FROM user WHERE alias = '".$alias."' and password = '".$password."'";
  $result = $link->query($sql);
  $row = $result->fetch_assoc();
- if ($row==1) {
-  header("location: main.php");
+ //if ($row==1) {
+  //header("location: main.php");
 
- }else{
-  echo "Usuario no encontrado";
-  header("location: index.php");
- }
+ //}else{
+  //echo "Usuario no encontrado";
+  //header("location: index.php");
+// }
  
 // $sql= "SELECT * FROM user";
 // $result = $link->query($sql);
@@ -42,7 +42,13 @@ session_start();
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-  <?php include "header-tailwind.php" ?>
+<header>
+    <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
+        <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+            <div style="font-family: sans serif; font-size:40px;"><h1><strong style=" padding-left:500px">CHESS.ES</strong></h1></div>
+        </div>
+    </nav>
+</header>
 <form method ="post">
   <section class="bg-gray-50 dark:bg-gray-900">
     <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
@@ -83,7 +89,7 @@ session_start();
         </div>
     </div>
     <div>
-      <?php include 'footer-tailwind.php'; ?>
+      <?php include 'footer-tailwind.php' ?>
     </div>
   </section>
 </form>

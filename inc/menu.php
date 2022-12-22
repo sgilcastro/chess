@@ -15,6 +15,7 @@ require "config.php";
 </head>
 
 <body>
+    <?php include "header-tailwind.php" ?>
     <section>
         <div class="flex flex-col items-center justify-center px-20 py-40 mx-auto ">
             
@@ -45,5 +46,6 @@ require "config.php";
     </section>
 
 </body>
+<?php include "footer-tailwind.php" ?>
 
 </html>

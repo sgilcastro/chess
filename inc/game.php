@@ -14,6 +14,7 @@ require "config.php";
 </head>
 
 <body>
+<?php include "header-tailwind.php" ?>
   <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto ">
     <div>
       <h1 class="mb-6 text-3xl font-extrabold tracking-tight leading-none text-gray-900 md:text-4xl dark:text-white">
@@ -108,5 +109,5 @@ require "config.php";
 
         </div>
 </body>
-
+<?php include "footer-tailwind.php" ?>
 </html>
