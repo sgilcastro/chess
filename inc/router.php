@@ -20,6 +20,9 @@ function loadContent($id_page) {
         case "rank":
             include 'inc/rank.php';
             break;
+        case "menu":
+            include 'inc/menu.php';
+            break;
         default:
             include 'inc/error404.php';
             break;
