@@ -1,24 +1,36 @@
 <?php
-
+session_start();  
  // Include config file
  require "config.php";
- 
-$sql= "SELECT * FROM user";
-$result = $link->query($sql);
+ $alias = $_POST['alias'];
+ $password = $_POST ['password'];
+ $sql = "SELECT * FROM user WHERE alias = '".$alias."' and password = '".$password."'";
+ $result = $link->query($sql);
+ $row = $result->fetch_assoc();
+ if ($row==1) {
+  header("location: main.php");
 
-while($row = $result->fetch_assoc()){
-  echo "
-  <tr>
-  <td>$row[id_user]</br></td>
-  <td>$row[name]</br></td>
-  <td>$row[lastname]</br></td>
-  <td>$row[alias]</br></td>
-  <td>$row[email]</br></td>
-  <td>$row[nationality]</br></td>
-  </tr>
-  ";
+ }else{
+  echo "Usuario no encontrado";
+  header("location: index.php");
+ }
+ 
+// $sql= "SELECT * FROM user";
+// $result = $link->query($sql);
+
+// while($row = $result->fetch_assoc()){
+//   echo "
+//   <tr>
+//   <td>$row[id_user]</br></td>
+//   <td>$row[name]</br></td>
+//   <td>$row[lastname]</br></td>
+//   <td>$row[alias]</br></td>
+//   <td>$row[email]</br></td>
+//   <td>$row[nationality]</br></td>
+//   </tr>
+//   ";
   
-}
+
 
  ?>
 <!doctype html>
@@ -41,8 +53,8 @@ while($row = $result->fetch_assoc()){
                 </h1>
                 <form class="space-y-4 md:space-y-6" action="#">
                     <div>
-                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Username</label>
-                        <input type="email" name="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@company.com" required="">
+                        <label for="alias" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Alias</label>
+                        <input type="text" name="alias" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required="">
                     </div>
                     <div>
                         <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
@@ -60,7 +72,7 @@ while($row = $result->fetch_assoc()){
                         <a href="#" class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Forgot password?</a>
                     </div>
                     <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-center">
-                      Create
+                      Submit
                       </button>                  
                       <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                         Don’t have an account yet? <a href="index.php?page=create" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</a>
