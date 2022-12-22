@@ -42,6 +42,7 @@ session_start();
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
+  <?php include "header-tailwind.php" ?>
 <form method ="post">
   <section class="bg-gray-50 dark:bg-gray-900">
     <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
@@ -80,6 +81,9 @@ session_start();
                 </form>
             </div>
         </div>
+    </div>
+    <div>
+      <?php include 'footer-tailwind.php'; ?>
     </div>
   </section>
 </form>

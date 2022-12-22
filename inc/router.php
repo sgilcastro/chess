@@ -20,24 +20,24 @@ function loadContent($id_page) {
             break; 
         case "listgames":
             include 'inc/listgames.php';
-            break;
-        // case "index":
-        //     include 'inc/index.php';
-        //     break;            
+            break;         
         case "profile":
             include 'inc/profile.php';
             break;
         case "play":
             include 'inc/play.php';
             break;
-        case "viewrank":
-            include 'inc/viewrank.php';
+        case "rank":
+            include 'inc/rank.php';
             break;
         case "edit":
             include 'inc/edit.php';
             break;
         case "delete":
             include 'inc/delete.php';     
+            break;
+        case "menu":
+            include 'inc/menu.php';
             break;
         default:
             include 'inc/error404.php';
