@@ -6,6 +6,8 @@
 -- Tiempo de generación: 21-12-2022 a las 10:39:05
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 8.1.10
+CREATE database ajedrez;
+USE ajedrez;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
