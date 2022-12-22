@@ -16,6 +16,7 @@ function loadContent($id_page) {
             break;
         case "create":
             include 'inc/create.php';
+
             break; 
         case "listgames":
             include 'inc/listgames.php';
@@ -36,7 +37,7 @@ function loadContent($id_page) {
             include 'inc/edit.php';
             break;
         case "delete":
-            include 'inc/delete.php';
+            include 'inc/delete.php';     
             break;
         default:
             include 'inc/error404.php';
