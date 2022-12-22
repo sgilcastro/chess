@@ -23,8 +23,8 @@ function loadContent($id_page) {
         case "index":
             include 'inc/index.php';
             break;            
-        case "viewprofile":
-            include 'inc/viewprofile.php';
+        case "profile":
+            include 'inc/profile.php';
             break;
         case "play":
             include 'inc/play.php';
