@@ -2,18 +2,18 @@
 session_start();  
  // Include config file
  require "config.php";
- $alias = $_POST['alias'];
- $password = $_POST ['password'];
- $sql = "SELECT * FROM user WHERE alias = '".$alias."' and password = '".$password."'";
- $result = $link->query($sql);
- $row = $result->fetch_assoc();
- if ($row==1) {
-  header("location: main.php");
+//  $alias = $_POST['alias'];
+//  $password = $_POST ['password'];
+//  $sql = "SELECT * FROM user WHERE alias = '".$alias."' and password = '".$password."'";
+//  $result = $link->query($sql);
+//  $row = $result->fetch_assoc();
+//  if ($row==1) {
+//   header("location: main.php");
 
- }else{
-  echo "Usuario no encontrado";
-  header("location: index.php");
- }
+//  }else{
+//   echo "Usuario no encontrado";
+//   // header("location: index.php");
+//  }
  
 // $sql= "SELECT * FROM user";
 // $result = $link->query($sql);
