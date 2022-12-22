@@ -72,8 +72,8 @@ function getPunctuationFromRank($rank)
             <section>
                 <form method='post'>
                     <select name="rank">
-                        <option value="">Ranks</option>
-                        <option value="All ranks">All ranks</option>
+                        <option value="">Rangos</option>
+                        <option value="All ranks">Todos los rangos</option>
                         <option value="Principiante">Principiante</option>
                         <option value="Aficionado">Aficionado</option>
                         <option value="Jugador de club medio">Jugador de club medio</option>
@@ -91,13 +91,13 @@ function getPunctuationFromRank($rank)
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
                             <th scope="col" class="py-3 px-6">
-                                Player
+                                Jugador
                             </th>
                             <th scope="col" class="py-3 px-6">
-                                Range
+                                Rango
                             </th>
                             <th scope="col" class="py-3 px-6 text-center">
-                                Score
+                                Puntuación
                             </th>
                         </tr>
                     </thead>
@@ -127,7 +127,7 @@ function getPunctuationFromRank($rank)
             </div>
 
             <a href="index.php"
-                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-center">Menu</a>
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-center">Menú</a>
 
         </div>
     </section>
