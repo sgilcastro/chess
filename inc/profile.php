@@ -1,52 +1,23 @@
-<?php
-require ('config.php');
-
-$id_user;
-$alias = "";
-$name ="";
-$lastname= "";
-$email ="";
-$password ="";
-$rang =0;
-$win_games=0;
-$lose_games=0;
-$draw_games=0;
-$nationality ="";
-$created_at= date('Y-M-D');
-$errorMsg="";
-$successMsg ="";
-if ($_SERVER['REQUEST_METHOD']=='POST'){
-  $name =$_POST['name'];
-  $lastname =$_POST['lastname'];
-  $nationality=$_POST['nationality'];
-  $alias =$_POST['alias'];
-  $email =$_POST['email'];  
-  $password =$_POST['password'];
-  do{
-    if (empty($name) || empty($lastname) || empty($alias) || empty($email) || empty($password) || empty($nationality)) {
-      $errorMsg= 'Please fill all empty fields';
-      break;
-    }
-
-    //add user
-    $sql= "INSERT INTO user (id_user, name, lastname, alias, nationality , email, password)". "VALUES ('$id_user','$name', '$lastname', '$nationality' , '$alias', '$email', '$password')" ;
-    $result = $link->query($sql);
-    $alias = "";
-    $name ="";
-    $lastname= "";
-    $email ="";
-    $password ="";
-    $nationality="";
-
-    $successMsg = "Player added succesfully";
-    header("location: index.php");
-  }
-  while(false);
-
-
-}
-?>
-<!doctype html>
+<?php 
+  require 'config.php';
+//   $alias = $_POST['alias'];
+//   $password = $_POST ['password'];
+//   $sql = "SELECT * FROM user WHERE alias = '".$alias."' and password = '".$password."'";
+//   $result = $link->query($sql);
+//   $row = $result->fetch_assoc();
+// while($row = $result->fetch_assoc()){
+//   echo "
+//   <tr>
+//   <td>$row[id_user]</br></td>
+//   <td>$row[name]</br></td>
+//   <td>$row[lastname]</br></td>
+//   <td>$row[alias]</br></td>
+//   <td>$row[email]</br></td>
+//   <td>$row[nationality]</br></td>
+//   </tr>
+//   ";
+  ?>
+  <!doctype html>
 <html>
 <head>
   <meta charset="UTF-8">
@@ -56,24 +27,13 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
 </head>
 <body>
 <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-  <h1>Create User</h1>
+  <h1>Profile</h1>
 
-  <?php 
-  if (!empty($errorMsg)) {
-    echo "
-    <div class='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative' role='alert'>
-    <strong >.$errorMsg.</strong>
-    <span class='block sm:inline'>Something seriously bad happened.</span>
-    <span class='absolute top-0 bottom-0 right-0 px-4 py-3'>
-      
-    </span>
-  </div>";
-  }
-  ?>
+  
   <form method= "post">
     <div class="form-group mb-6">
       <label class="form-label inline-block mb-2 text-gray-700">Name</label>
-      <input type="text" name ="name" value="<?php echo $name; ?> "class="form-control 
+      <input type="text" name ="name" value="<?php echo $row['name']; ?> "class="form-control 
         block
         w-full
         px-3
@@ -92,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
     </div>
     <div class="form-group mb-6">
       <label class="form-label inline-block mb-2 text-gray-700">Lastname</label>
-      <input type="text" name ="lastname"  value="<?php echo $lastname; ?> "class="form-control
+      <input type="text" name ="lastname"  value="<?php echo $row['lastname']; ?> "class="form-control
         block
         w-full
         px-3
@@ -111,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
     </div>
     <div class="form-group mb-6">
       <label class="form-label inline-block mb-2 text-gray-700">Alias</label>
-      <input type="text" value="<?php echo $alias; ?> "name ="alias" class="form-control
+      <input type="text" value="<?php echo $row['alias'];  ?> "name ="alias" class="form-control
         block
         w-full
         px-3
@@ -130,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
     </div>
     <div class="form-group mb-6">
       <label class="form-label inline-block mb-2 text-gray-700">Country</label>
-      <input type="text" value="<?php echo $nationality; ?> " name="nationality"class="form-control
+      <input type="text" value="<?php echo $row['nationality'];  ?> " name="nationality"class="form-control
         block
         w-full
         px-3
@@ -149,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
     </div>
     <div class="form-group mb-6">
       <label for="inputEmail" class="form-label inline-block mb-2 text-gray-700">Email address</label>
-      <input type="email" value="<?php echo $email; ?> " name="email"class="form-control
+      <input type="email" value="<?php echo $row['email'];  ?> " name="email"class="form-control
         block
         w-full
         px-3
@@ -163,40 +123,30 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
         transition
         ease-in-out
         m-0
-        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" 
+        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
          placeholder="Enter email">
     </div>
     
-    <div class="form-group mb-6">
-      <label for="InputPassword1" class="form-label inline-block mb-2 text-gray-700">Password</label>
-      <input type="password" value="<?php echo $password; ?> " name="password" class="form-control block
-        w-full
-        px-3
-        py-1.5
-        text-base
-        font-normal
-        text-gray-700
-        bg-white bg-clip-padding
-        border border-solid border-gray-300
-        rounded
-        transition
-        ease-in-out
-        m-0
-        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" 
-        placeholder="Password">
+    <div class= "flex justify-between">
+      <button type="submit" class=" 
+      px-6
+      py-2.5
+      bg-blue-600
+      text-white
+      font-medium
+      text-xs
+      leading-tight
+      uppercase
+      rounded
+      shadow-md
+      hover:bg-blue-700 hover:shadow-lg
+      focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
+      active:bg-blue-800 active:shadow-lg
+      transition
+      duration-150
+      ease-in-out mb-6">Change Password
+      </button>
     </div>
-    <?php
-    if (!empty($successMsg)) {
-      echo "
-    <div class='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative' role='alert'>
-    <strong >.$successMsg.</strong>
-    <span class='block sm:inline'>Something seriously bad happened.</span>
-    <span class='absolute top-0 bottom-0 right-0 px-4 py-3'>
-      
-    </span>
-  </div>";
-    }
-    ?>
     <div class= "flex justify-between">
       <button type="submit" class="
       px-6

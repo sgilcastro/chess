@@ -1,50 +1,56 @@
 <?php
 require ('config.php');
+session_start();
+// $id_user;
+// $alias = "";
+// $name ="";
+// $lastname= "";
+// $email ="";
+// $password ="";
+// $rang =0;
+// $win_games=0;
+// $lose_games=0;
+// $draw_games=0;
+// $nationality ="";
+// $created_at= date('Y-M-D');
+// $errorMsg="";
+// $successMsg ="";
 
-$id_user;
-$alias = "";
-$name ="";
-$lastname= "";
-$email ="";
-$password ="";
-$rang =0;
-$win_games=0;
-$lose_games=0;
-$draw_games=0;
-$nationality ="";
-$created_at= date('Y-M-D');
-$errorMsg="";
-$successMsg ="";
-if ($_SERVER['REQUEST_METHOD']=='POST'){
-  $name =$_POST['name'];
-  $lastname =$_POST['lastname'];
-  $nationality=$_POST['nationality'];
-  $alias =$_POST['alias'];
-  $email =$_POST['email'];  
-  $password =$_POST['password'];
-  do{
-    if (empty($name) || empty($lastname) || empty($alias) || empty($email) || empty($password) || empty($nationality)) {
-      $errorMsg= 'Please fill all empty fields';
-      break;
-    }
+// if ($_SERVER['REQUEST_METHOD']=='GET') {
+//     if (!isset($_GET['id_user'])) {
+//         header("location: index.php");
+//         exit;
+//     }
+//     $id_user= $_GET['id_user'];
+//     $sql= "SELECT * FROM user WHERE id_user = $id_user";
+//     $result= $link->query($sql);
+//     $row= $result->fetch_assoc(); 
+//     if (!$row) {
+//         header("location: index.php");
+//     }
+    
+// }else {
+//     $nationality =$_POST['nationality'];
+//     $name =$_POST['name'];
+//     $lastname =$_POST['lastname'];
+//     $nationality=$_POST['nationality'];
+//     $alias =$_POST['alias'];
+//     $email =$_POST['email'];  
+//     $password =$_POST['password'];
+//     do {
+//         if (empty($name) || empty($lastname) || empty($alias) || empty($email) || empty($password) || empty($nationality)) {
+//             $errorMsg= 'Please fill all empty fields';
+//             break;
+//         }
+//         $sql = "UPDATE user " . "SET name = '$name', lastname = '$lastname',email = '$email', alias = '$alias', nationality ='$nationality', password ='$password' "."WHERE id_user = $id_user" ;
+//         $result= $link->query($sql); 
 
-    //add user
-    $sql= "INSERT INTO user (id_user, name, lastname, alias, nationality , email, password)". "VALUES ('$id_user','$name', '$lastname', '$nationality' , '$alias', '$email', '$password')" ;
-    $result = $link->query($sql);
-    $alias = "";
-    $name ="";
-    $lastname= "";
-    $email ="";
-    $password ="";
-    $nationality="";
+//         $successMsg = "Player added succesfully";
+//         header("location: index.php");
+//         exit;
+//     } while (false);
+// }
 
-    $successMsg = "Player added succesfully";
-    header("location: index.php");
-  }
-  while(false);
-
-
-}
 ?>
 <!doctype html>
 <html>
@@ -56,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
 </head>
 <body>
 <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-  <h1>Create User</h1>
+  <h1>Modify User</h1>
 
   <?php 
   if (!empty($errorMsg)) {
@@ -71,6 +77,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
   }
   ?>
   <form method= "post">
+    <input type ="hidden" name ="id_user" value ="<?php echo $id_user; ?>">
     <div class="form-group mb-6">
       <label class="form-label inline-block mb-2 text-gray-700">Name</label>
       <input type="text" name ="name" value="<?php echo $name; ?> "class="form-control 
@@ -87,7 +94,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
         transition
         ease-in-out
         m-0
-        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" 
+        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
         placeholder="Name">
     </div>
     <div class="form-group mb-6">
@@ -129,8 +136,8 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
          placeholder="Alias">
     </div>
     <div class="form-group mb-6">
-      <label class="form-label inline-block mb-2 text-gray-700">Country</label>
-      <input type="text" value="<?php echo $nationality; ?> " name="nationality"class="form-control
+      <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an option</label>
+      <input type="country" value="<?php echo $country; ?> " name="email"class="form-control
         block
         w-full
         px-3
