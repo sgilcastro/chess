@@ -126,7 +126,7 @@ function getPunctuationFromRank($rank)
                 </table>
             </div>
 
-            <a href="index.php"
+            <a href="index.php?page=menu"
                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-center">Menu</a>
 
         </div>
