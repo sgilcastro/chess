@@ -72,7 +72,7 @@ session_start();
                         <a href="#" class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Forgot password?</a>
                     </div>
                     <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-center">
-                      Create
+                      Submit
                       </button>                  
                       <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                         Don’t have an account yet? <a href="index.php?page=create" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</a>
