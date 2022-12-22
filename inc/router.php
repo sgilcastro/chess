@@ -20,10 +20,7 @@ function loadContent($id_page) {
             break; 
         case "listgames":
             include 'inc/listgames.php';
-            break;
-        case "index":
-            include 'inc/index.php';
-            break;            
+            break;         
         case "profile":
             include 'inc/profile.php';
             break;
